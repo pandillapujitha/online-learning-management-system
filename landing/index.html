@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumen LMS - Online Learning Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="/">Lumen<span>LMS</span></a>
+    <nav>
+      <a href="#courses">Courses</a>
+      <a href="#how">How it works</a>
+      <a href="#architecture">Cloud design</a>
+      <a class="cta" href="/app/">Open the app</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>A classroom that runs in the cloud.</h1>
+      <p>Browse courses, enroll in one click, finish lessons and test yourself with quizzes. Instructors publish and manage everything from the same place.</p>
+      <div class="actions">
+        <a class="cta" href="/app/login">Log in or sign up</a>
+        <a class="ghost" href="#courses">See the courses</a>
+      </div>
+      <p class="status" id="status" aria-live="polite">Checking server...</p>
+    </div>
+    <ul class="stats" aria-label="Platform numbers">
+      <li><strong id="stat-courses">-</strong> courses</li>
+      <li><strong id="stat-lessons">-</strong> lessons</li>
+      <li><strong id="stat-students">-</strong> enrollments</li>
+    </ul>
+  </section>
+
+  <section id="courses" class="block">
+    <h2>Available courses</h2>
+    <input id="search" type="search" placeholder="Search by title or topic" aria-label="Search courses">
+    <div id="catalog" class="catalog"><p class="muted">Loading courses...</p></div>
+  </section>
+
+  <section id="how" class="block alt">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><h3>Create an account</h3><p>Sign up as a student or as an instructor.</p></li>
+      <li><h3>Enroll and learn</h3><p>Open lessons in any order and mark each one complete.</p></li>
+      <li><h3>Take the quiz</h3><p>Answers are checked on the server and your best score is saved.</p></li>
+    </ol>
+  </section>
+
+  <section id="architecture" class="block">
+    <h2>Cloud architecture</h2>
+    <p class="muted">Three tiers, each of which can be scaled or replaced on its own.</p>
+    <div class="tiers">
+      <div><h3>Presentation</h3><p>This HTML, CSS and JavaScript site plus the React single-page app. Can be hosted on a CDN or object storage.</p></div>
+      <div><h3>Application</h3><p>Stateless Node.js and Express REST API with JWT login. Packaged in Docker and run behind a load balancer using <code>/api/health</code>.</p></div>
+      <div><h3>Data</h3><p>JSON file store for the demo. Swap <code>db.js</code> for MongoDB Atlas, Amazon RDS or DynamoDB in production.</p></div>
+    </div>
+  </section>
+
+  <footer>Online Learning Management System - Cloud Computing project</footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

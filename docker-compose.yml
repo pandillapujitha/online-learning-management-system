@@ -1,0 +1,12 @@
+services:
+  lms:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      JWT_SECRET: change-this-secret-in-production
+    volumes:
+      - lms-data:/data
+    restart: unless-stopped
+volumes:
+  lms-data:
